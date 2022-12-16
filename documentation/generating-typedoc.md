@@ -1,8 +1,8 @@
-# CoinflectJS -  Typedoc Documentation
+# Coinflect - Typedoc Documentation
 
 ## Overview
 
-We use [typedoc](https://typedoc.org) to turn comments in our typescript into markdown pages which can be copied into [the Coinflect Docs repo](https://github.com/coinflect/coinflect-docs) and [the CoinflectJS Docs repo](https://github.com/coinflect/coinflectjs-docs). Each time a new version of CoinflectJS gets deployed to [npm](https://www.npmjs.com/package/coinflect) then typedocs should be regenerated and pasted into the both docs repo previously mentioned.
+We use [typedoc](https://typedoc.org) to turn comments in our typescript into markdown pages which can be copied into [the Coinflect Docs repo](https://github.com/coinflect/coinflect-docs) and [the Coinflect Docs repo](https://github.com/coinflect/coinflectjs-docs). Each time a new version of Coinflect gets deployed to [npm](https://www.npmjs.com/package/coinflect) then typedocs should be regenerated and pasted into the both docs repo previously mentioned.
 
 ## Steps
 
@@ -45,9 +45,9 @@ This will generate `README.md` and 3 directories, `classes/`, `interfaces/` and 
 
 First, if any new files were generated in `README.md` then rename the newly generated `README.md` to `api.md`. Next open `api.md` and clean up the formatting.
 
-* Remove the generated headers and replace them w/ API and CoinflectJS w/ a link to the current build
-* Nest the list items per their parent category
-* Clean up the body copy. Ex: `API-AVM` -> `AVM` and `API-AVM-Credentials` -> `Credentials`
+- Remove the generated headers and replace them w/ API and Coinflect w/ a link to the current build
+- Nest the list items per their parent category
+- Clean up the body copy. Ex: `API-AVM` -> `AVM` and `API-AVM-Credentials` -> `Credentials`
 
 ## Copy to Docs Repo
 
@@ -55,4 +55,4 @@ Now copy the `api.md` file into the `/path/to/docs/apis/tools/coinflectjs/` dire
 
 Next copy 3 directories, `classes/`, `interfaces/` and `modules/` into the `/path/to/coinflectjs-docs/` directory of your local `coinflectjs-docs/` repo.
 
-Confirm that everything worked by running `yarn start` and viewing the new CoinflectJS docs on `localhost`. If that is successful next run `yarn build` to confirm that docusaurus is able to properly build. Once that is successful, branch off of `master`, commit your changes and push them on your new feature branch to the remote `coinflect-docs` repo and create a PR.
+Confirm that everything worked by running `yarn start` and viewing the new Coinflect docs on `localhost`. If that is successful next run `yarn build` to confirm that docusaurus is able to properly build. Once that is successful, branch off of `master`, commit your changes and push them on your new feature branch to the remote `coinflect-docs` repo and create a PR.

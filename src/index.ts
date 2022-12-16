@@ -27,7 +27,7 @@ import BN from "bn.js"
 import { Buffer } from "buffer/"
 
 /**
- * CoinflectJS is middleware for interacting with Coinflect node RPC APIs.
+ * Coinflect is middleware for interacting with Coinflect node RPC APIs.
  *
  * Example usage:
  * ```js

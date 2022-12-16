@@ -1,6 +1,6 @@
 # E2E Testing
 
-We can do the end-to-end testing for the latest CoinflectJS by setting up a local Coinflect network and running the `e2e_tests` in the root directory.
+We can do the end-to-end testing for the latest Coinflect by setting up a local Coinflect network and running the `e2e_tests` in the root directory.
 
 ## Setup Local Coinflect Network
 

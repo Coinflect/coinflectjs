@@ -1,41 +1,41 @@
-# CoinflectJS - The Coinflect Platform JavaScript Library
+# Coinflect - The Coinflect Platform JavaScript Library
 
 ## Overview
 
-CoinflectJS is a JavaScript Library for interfacing with the Coinflect Platform. It is built using TypeScript and intended to support both browser and Node.js. The CoinflectJS library allows you to issue commands to the Coinflect node APIs.
+Coinflect is a JavaScript Library for interfacing with the Coinflect Platform. It is built using TypeScript and intended to support both browser and Node.js. The Coinflect library allows you to issue commands to the Coinflect node APIs.
 
 The APIs currently supported by default are:
 
-* Admin API
-* Auth API
-* AVM API (X-Chain)
-* EVM API (C-Chain)
-* Health API
-* Index API
-* Info API
-* Keystore API
-* Metrics API
-* PlatformVM API (P-Chain)
-* Socket
+- Admin API
+- Auth API
+- AVM API (X-Chain)
+- EVM API (C-Chain)
+- Health API
+- Index API
+- Info API
+- Keystore API
+- Metrics API
+- PlatformVM API (P-Chain)
+- Socket
 
-We built CoinflectJS with ease of use in mind. With this library, any Javascript developer is able to interact with a node on the Coinflect Platform who has enabled their API endpoints for the developer's consumption. We keep the library up-to-date with the latest changes in the [Coinflect Platform Specification](https://docs.coinflect.com).
+We built Coinflect with ease of use in mind. With this library, any Javascript developer is able to interact with a node on the Coinflect Platform who has enabled their API endpoints for the developer's consumption. We keep the library up-to-date with the latest changes in the [Coinflect Platform Specification](https://docs.coinflect.com).
 
-  Using CoinflectJS, developers can:
+Using Coinflect, developers can:
 
-* Locally manage private keys
-* Retrieve balances on addresses
-* Get UTXOs for addresses
-* Build and sign transactions
-* Issue signed transactions to the X-Chain, P-Chain, and C-Chain
-* Perform cross-chain swaps between the X-Chain<->P-Chain and between the X-Chain<->C-Chain
-* Add Validators and Delegators to the Primary Subnetwork by staking CFLT
-* Create a Subnetwork
-* Administer a local node
-* Retrieve Coinflect network information from a node
+- Locally manage private keys
+- Retrieve balances on addresses
+- Get UTXOs for addresses
+- Build and sign transactions
+- Issue signed transactions to the X-Chain, P-Chain, and C-Chain
+- Perform cross-chain swaps between the X-Chain<->P-Chain and between the X-Chain<->C-Chain
+- Add Validators and Delegators to the Primary Subnetwork by staking CFLT
+- Create a Subnetwork
+- Administer a local node
+- Retrieve Coinflect network information from a node
 
 ### Requirements
 
-CoinflectJS requires Node.js LTS version 14.16.0 or higher to compile.
+Coinflect requires Node.js LTS version 14.16.0 or higher to compile.
 
 ### Installation
 
@@ -49,7 +49,7 @@ You can also pull the repo down directly and build it from scratch:
 
 This will generate a pure Javascript library and place it in a folder named "web" in the project root. The "coinflect.js" file can then be dropped into any project as a pure javascript implementation of Coinflect.
 
-The CoinflectJS library can be imported into your existing Node.js project as follows:
+The Coinflect library can be imported into your existing Node.js project as follows:
 
 ```js
 const coinflect = require("coinflect")
@@ -71,14 +71,14 @@ const bintools = BinTools.getInstance()
 
 The above lines import the libraries used in the tutorials. The libraries include:
 
-* Coinflect: Our javascript module.
-* BinTools: A singleton built into CoinflectJS that is used for dealing with binary data.
-* [BN](https://www.npmjs.com/package/bn.js): A bignumber module use by CoinflectJS.
-* [Buffer](https://www.npmjs.com/package/buffer): A Buffer library.
+- Coinflect: Our javascript module.
+- BinTools: A singleton built into Coinflect that is used for dealing with binary data.
+- [BN](https://www.npmjs.com/package/bn.js): A bignumber module use by Coinflect.
+- [Buffer](https://www.npmjs.com/package/buffer): A Buffer library.
 
 ## Example 1 &mdash; Managing X-Chain Keys
 
-CoinflectJS comes with its own AVM Keychain. This KeyChain is used in the functions of the API, enabling them to sign using keys it's registered. The first step in this process is to create an instance of CoinflectJS connected to our Coinflect Platform endpoint of choice.
+Coinflect comes with its own AVM Keychain. This KeyChain is used in the functions of the API, enabling them to sign using keys it's registered. The first step in this process is to create an instance of Coinflect connected to our Coinflect Platform endpoint of choice.
 
 ```js
 import { Coinflect, BinTools, Buffer, BN } from "coinflect"
@@ -87,7 +87,7 @@ const bintools = BinTools.getInstance()
 
 const myNetworkID = 12345 //default is 1, we want to override that for our local network
 const coinflect = new Coinflect("localhost", 9650, "http", myNetworkID)
-const xchain = coinflect.XChain() //returns a reference to the X-Chain used by CoinflectJS
+const xchain = coinflect.XChain() //returns a reference to the X-Chain used by Coinflect
 ```
 
 ### Accessing the KeyChain
@@ -165,7 +165,7 @@ const isValid = keypair.verify(message, signature) // returns a boolean
 
 ## Example 2 &mdash; Creating An Asset
 
-This example creates an asset in the X-Chain and publishes it to the Coinflect Platform. The first step in this process is to create an instance of CoinflectJS connected to our Coinflect Platform endpoint of choice.
+This example creates an asset in the X-Chain and publishes it to the Coinflect Platform. The first step in this process is to create an instance of Coinflect connected to our Coinflect Platform endpoint of choice.
 
 ```js
 import { Coinflect, BinTools, Buffer, BN } from "coinflect"
@@ -173,12 +173,12 @@ import { InitialStates, SECPTransferOutput } from "coinflect/dist/apis/avm"
 
 const myNetworkID = 12345 // default is 1, we want to override that for our local network
 const coinflect = new Coinflect("localhost", 9650, "http", myNetworkID)
-const xchain = coinflect.XChain() // returns a reference to the X-Chain used by CoinflectJS
+const xchain = coinflect.XChain() // returns a reference to the X-Chain used by Coinflect
 ```
 
 ### Describe the new asset
 
-The first steps in creating a new asset using CoinflectJS is to determine the qualities of the asset. We will give the asset a name, a ticker symbol, as well as a denomination.
+The first steps in creating a new asset using Coinflect is to determine the qualities of the asset. We will give the asset a name, a ticker symbol, as well as a denomination.
 
 ```js
 // Name our new coin and give it a symbol
@@ -207,11 +207,11 @@ const secpOutput1 = new SECPTransferOutput(
   addresses
 )
 const secpOutput2 = new SECPTransferOutput(new BN(500), new BN(400), 1, [
-  addresses[1],
+  addresses[1]
 ])
 const secpOutput3 = new SECPTransferOutput(new BN(600), new BN(400), 1, [
   addresses[1],
-  addresses[2],
+  addresses[2]
 ])
 
 // Populate the initialStates with the outputs
@@ -247,7 +247,7 @@ const signed = unsigned.sign(xchain) // returns a Tx class
 
 Now that we have a signed transaction ready to send to the network, let's issue it!
 
-Using the CoinflectJS X-Chain API, we going to call the `issueTx` function. This function can take either the Tx class returned in the previous step, a CB58 representation of the transaction, or a raw Buffer class with the data for the transaction. Examples of each are below:
+Using the Coinflect X-Chain API, we going to call the `issueTx` function. This function can take either the Tx class returned in the previous step, a CB58 representation of the transaction, or a raw Buffer class with the data for the transaction. Examples of each are below:
 
 ```js
 // using the Tx class
@@ -277,10 +277,10 @@ const status = await xchain.getTxStatus(txid)
 
 The statuses can be one of "Accepted", "Processing", "Unknown", and "Rejected":
 
-* "Accepted" indicates that the transaction has been accepted as valid by the network and executed
-* "Processing" indicates that the transaction is being voted on.
-* "Unknown" indicates that node knows nothing about the transaction, indicating the node doesn't have it
-* "Rejected" indicates the node knows about the transaction, but it conflicted with an accepted transaction
+- "Accepted" indicates that the transaction has been accepted as valid by the network and executed
+- "Processing" indicates that the transaction is being voted on.
+- "Unknown" indicates that node knows nothing about the transaction, indicating the node doesn't have it
+- "Rejected" indicates the node knows about the transaction, but it conflicted with an accepted transaction
 
 ### Identifying the newly created asset
 
@@ -300,7 +300,7 @@ const coinflect = new coinflect.Coinflect(
   "http",
   myNetworkID
 )
-const xchain = coinflect.XChain() // returns a reference to the X-Chain used by CoinflectJS
+const xchain = coinflect.XChain() // returns a reference to the X-Chain used by Coinflect
 ```
 
 We're also assuming that the keystore contains a list of addresses used in this transaction.
@@ -368,16 +368,16 @@ const status = await xchain.getTxStatus(txid)
 
 The statuses can be one of "Accepted", "Processing", "Unknown", and "Rejected":
 
-* "Accepted" indicates that the transaction has been accepted as valid by the network and executed
-* "Processing" indicates that the transaction is being voted on.
-* "Unknown" indicates that node knows nothing about the transaction, indicating the node doesn't have it
-* "Rejected" indicates the node knows about the transaction, but it conflicted with an accepted transaction
+- "Accepted" indicates that the transaction has been accepted as valid by the network and executed
+- "Processing" indicates that the transaction is being voted on.
+- "Unknown" indicates that node knows nothing about the transaction, indicating the node doesn't have it
+- "Rejected" indicates the node knows about the transaction, but it conflicted with an accepted transaction
 
 ### Check the results
 
 The transaction finally came back as "Accepted", now let's update the UTXOSet and verify that the transaction balance is as we expected.
 
-*Note: In a real network the balance isn't guaranteed to match this scenario. Transaction fees or additional spends may vary the balance. For the purpose of this example, we assume neither of those cases.*
+_Note: In a real network the balance isn't guaranteed to match this scenario. Transaction fees or additional spends may vary the balance. For the purpose of this example, we assume neither of those cases._
 
 ```js
 const updatedU = await xchain.getUTXOs()
@@ -402,6 +402,5 @@ yarn build && yarn test
 If the E2E check does not pass, go into the 'checks' section of the PR.
 `https://github.com/coinflect/coinflectjs/pull/<PR number>/checks`
 
-* Click on the `> E2E` tab on the left
-* Click 'Re-run jobs' on the right
-
+- Click on the `> E2E` tab on the left
+- Click 'Re-run jobs' on the right

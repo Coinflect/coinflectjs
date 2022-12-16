@@ -1443,7 +1443,7 @@ export class PlatformVMAPI extends JRPCAPI {
     }
     /*
     if(bintools.cb58Encode(destinationChain) !== Defaults.network[this.core.getNetworkID()].X["blockchainID"]) {
-      throw new Error("Error - PlatformVMAPI.buildExportTx: Destination ChainID must The X-Chain ID in the current version of CoinflectJS.")
+      throw new Error("Error - PlatformVMAPI.buildExportTx: Destination ChainID must The X-Chain ID in the current version of Coinflect.")
     }*/
 
     let to: Buffer[] = []
