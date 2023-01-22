@@ -4,7 +4,7 @@
 
 Coinflect is a JavaScript Library for interfacing with the Coinflect Platform. It is built using TypeScript and intended to support both browser and Node.js. The Coinflect library allows you to issue commands to the Coinflect node APIs.
 
-The APIs currently supported by default are:
+The APIs Currently supported by default are:
 
 - Admin API
 - Auth API
